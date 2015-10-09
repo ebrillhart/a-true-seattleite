@@ -1,1 +1,1 @@
-# seattle-adventure
+# Seattle Adventure
