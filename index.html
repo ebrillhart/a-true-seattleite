@@ -19,7 +19,7 @@
 	</div>
 
 	<!-- Home screen with options for game play, info, and rules of play -->
-	<div class="container" id="home" hidden>
+	<div class="container" id="homescreen">
 		<!-- Row for overall homescreen content -->
 		<div class="row">
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
@@ -33,7 +33,7 @@
 				<div class="row" id="gamebuttons">
 					<!-- How-To Button -->
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-						<button class="btn btn-default pull-right" id="howto" type="submit">How-To</button>
+						<button class="btn btn-default pull-right" id="howtobutton" type="submit">How-To</button>
 					</div>	
 					<!-- New Game button -->
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -66,14 +66,26 @@
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<!-- Home Button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+						<button class="btn btn-default pull-right" id="howtohome" type="submit">Home</button>
+					</div>	
+					<!-- New Game button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<button class="btn btn-default pull-left" id="howtostart" type="submit">Start Game</button>
+					</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- The game itself -->
-	<div class="container" id="game">
+	<div class="container" id="game" hidden>
 		<div class="row" id="gamebanner">
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" id="gametext">
+			<!-- Home Button -->
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-left">
+				<button class="btn btn-default pull-right" id="gamehome" type="submit">Home</button>
+			</div>	
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" id="gametext">
 				<p class="text-center lead">Player Turn</p>
 				<p class="text-center lead">Spaces to Move</p>
 			</div>
@@ -163,11 +175,37 @@
 	</div>
 
 	<!-- Win announcement at completion of game -->
-	<div class="container" id="wininfo">
+	<div class="container" id="wininfo" hidden>
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4" id="winner">
+				<p class="lead text-center" id="wintext">A Player Wins!</p>
+					<!-- Home Button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+						<button class="btn btn-default pull-right" id="winhome" type="submit">Home</button>
+					</div>	
+					<!-- New Game button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<button class="btn btn-default pull-left" id="winstart" type="submit">New Game</button>
+					</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- General info about game credits, etc. -->
-	<div class="container" id="gameinfo">
+	<div class="container" id="gameinfo" hidden>
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4" id="infotext">
+				<h3 class="text-center" id="infohead">Game Info</h3>
+				<p class="text-center">Built from scratch by Emma Brillhart with HTML5/CSS3, Bootstrap, JavaScript, and jQuery.</p>
+				<p class="text-center">Background image from (source).</p>
+				<p class="text-center">Space Needle icon created in Photoshop by Jenn Livermore from (source).</p>
+				<p class="text-center">Source Code: (GitHub link)</p>
+				<!-- Home Button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+						<button class="btn btn-default center-block" id="infohome" type="submit">Home</button>
+					</div>
+			</div>
+		</div>
 	</div>
 
 <!-- Scripts and end of game HTML -->

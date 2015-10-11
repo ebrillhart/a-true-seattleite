@@ -11,7 +11,7 @@ img#homelogo {
 	width: 100px;
 }
 
-#home {
+#homescreen {
 	margin-top: 100px;
 }
 
@@ -20,7 +20,7 @@ img#homelogo {
 }
 
 #gamebuttons {
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 #rules {
@@ -62,4 +62,34 @@ img#homelogo {
 
 #thirtyone {
 	border-radius: 100%;
+}
+
+#winner {
+	border: 1px solid black;
+	padding: 25px 0px;
+}
+
+#wininfo {
+	margin-top: 100px;
+}
+
+#wintext {
+	padding-bottom: 20px;
+}
+
+#gameinfo {
+	margin-top: 100px;
+}
+
+#infotext {
+	border: 1px solid black;
+	padding: 25px;
+}
+
+#infohead {
+	padding-bottom: 15px;
+}
+
+#gamehome {
+	margin-top: 45px;
 }
