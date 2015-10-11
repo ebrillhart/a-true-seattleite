@@ -32,3 +32,34 @@ img#homelogo {
 #rulestitle {
 	margin-top: 0;
 }
+
+#spinner {
+	height: 125px;
+	width: 75px;
+}
+
+#gametext {
+	margin-top: 30px;
+}
+
+#game {
+	margin-top: 25px;
+	margin-bottom: 100px;
+}
+
+#zero {
+	border-radius: 100%;
+}
+
+#start, #end {
+	margin-top: 35px;
+}
+
+.square {
+	border: 1px solid black;
+	height: 95px;
+}
+
+#thirtyone {
+	border-radius: 100%;
+}

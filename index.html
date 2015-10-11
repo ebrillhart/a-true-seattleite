@@ -17,6 +17,7 @@
 			</div>
 		</div>
 	</div>
+
 	<!-- Home screen with options for game play, info, and rules of play -->
 	<div class="container" id="home" hidden>
 		<!-- Row for overall homescreen content -->
@@ -50,7 +51,7 @@
 	</div>
 
 	<!-- Rules of the game, which can be toggled from home screen -->
-	<div class="container" id="howto">
+	<div class="container" id="howto" hidden>
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" id="rules">
 				<h3 class="text-center" id="rulestitle">Rules of Play</h3>
@@ -71,6 +72,94 @@
 
 	<!-- The game itself -->
 	<div class="container" id="game">
+		<div class="row" id="gamebanner">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" id="gametext">
+				<p class="text-center lead">Player Turn</p>
+				<p class="text-center lead">Spaces to Move</p>
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-right">
+				<img id="spinner" class="center-block img-responsive" src="images/whiteneedle.png">
+				<p class="text-center">Click to Spin</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="zero" value="0">
+				<p class="text-center" id="start">Start</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="one" value="1">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="two" value="2">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="three" value="3">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="four" value="4">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="five" value="5">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="six" value="6">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="seven" value="7">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="eight" value="8">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="nine" value="9">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="ten" value="10">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-10 col-sm-offset-10 col-md-offset-10 col-lg-offset-10 square" id="eleven" value="11">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="twentyone" value="21">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twenty" value="20">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="nineteen" value="19">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="eighteen" value="18">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="seventeen" value="17">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="sixteen" value="16">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="fifteen" value="15">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="fourteen" value="14">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="thirteen" value="13">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twelve" value="12">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="twentytwo" value="22">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="twentythree" value="23">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyfour" value="24">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyfive" value="25">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentysix" value="26">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyseven" value="27">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyeight" value="28">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentynine" value="29">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="thirty" value="30">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="thirtyone" value="31">
+				<p class="text-center" id="end">End</p>
+			</div>
+		</div>
 	</div>
 
 	<!-- Win announcement at completion of game -->
