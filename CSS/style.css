@@ -1,0 +1,34 @@
+/*.container {
+	border: 1px solid black;
+}
+
+div {
+	border: 1px solid red;
+}*/
+
+img#homelogo {
+	height: 150px;
+	width: 100px;
+}
+
+#home {
+	margin-top: 100px;
+}
+
+#about {
+	margin-top: 10px;
+}
+
+#gamebuttons {
+	margin-top: 10px;
+}
+
+#rules {
+	margin-top: 50px;
+	border: 1px solid black;
+	padding: 20px;
+}
+
+#rulestitle {
+	margin-top: 0;
+}

@@ -9,8 +9,79 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<h1 class="text-center">Hello World</h1>
+	<!-- Header which is always present on-screen with game title-->
+	<div class="container" id="title">
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" >
+				<h2 class="text-center">Seattle Adventure</h2>
+			</div>
+		</div>
+	</div>
+	<!-- Home screen with options for game play, info, and rules of play -->
+	<div class="container" id="home" hidden>
+		<!-- Row for overall homescreen content -->
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+				<!-- Row for the logo image -->
+				<div class="row">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+						<img id="homelogo" class="center-block img-responsive" src="images/whiteneedle.png">
+					</div>
+				</div>
+				<!-- Row for the larger game play and how to buttons -->
+				<div class="row" id="gamebuttons">
+					<!-- How-To Button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+						<button class="btn btn-default pull-right" id="howto" type="submit">How-To</button>
+					</div>	
+					<!-- New Game button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<button class="btn btn-default pull-left" id="startgame" type="submit">Start Game</button>
+					</div>
+				</div>
+				<!-- Row for the smaller about button -->
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+						<button type="button" id="about" class="btn btn-default btn-xs center-block">About</button>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<!-- Rules of the game, which can be toggled from home screen -->
+	<div class="container" id="howto">
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" id="rules">
+				<h3 class="text-center" id="rulestitle">Rules of Play</h3>
+				<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- The game itself -->
+	<div class="container" id="game">
+	</div>
+
+	<!-- Win announcement at completion of game -->
+	<div class="container" id="wininfo">
+	</div>
+
+	<!-- General info about game credits, etc. -->
+	<div class="container" id="gameinfo">
+	</div>
+
+<!-- Scripts and end of game HTML -->
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
