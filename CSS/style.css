@@ -1,11 +1,29 @@
-/*.container {
-	border: 1px solid black;
+body {
+	background: url("../images/seattlebackground.jpg") no-repeat center center fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
 }
 
-div {
-	border: 1px solid red;
-}*/
+button {
+	background-color: none;
+	border: 2px solid black;
+}
 
+.btn-default {
+    color: white;
+ 	background: none;
+    border: 2px solid white;
+    font-weight: bold;
+}
+
+/*Title container*/
+#title {
+	color: white;
+}
+
+/*Home Page*/
 img#homelogo {
 	height: 150px;
 	width: 100px;
@@ -23,23 +41,42 @@ img#homelogo {
 	margin-top: 20px;
 }
 
+
+/*How to screen*/
 #rules {
 	margin-top: 50px;
 	border: 1px solid black;
-	padding: 20px;
+	padding: 25px;
+	background: black;
+	opacity: 0.75;
+	color: white;
+	border-radius: 10%;
+}
+
+#rulestext {
+	padding-bottom: 25px;
 }
 
 #rulestitle {
 	margin-top: 0;
 }
 
+
+/*Game screen*/
 #spinner {
 	height: 125px;
 	width: 75px;
 }
 
+#spindiv {
+	color: white;
+	font-weight: bold;
+}
+
 #gametext {
 	margin-top: 30px;
+	color: white;
+	font-weight: bolder;
 }
 
 #game {
@@ -49,6 +86,9 @@ img#homelogo {
 
 #zero {
 	border-radius: 100%;
+	color: black;
+	font-weight: bold;
+	background: white;
 }
 
 #start, #end {
@@ -56,17 +96,33 @@ img#homelogo {
 }
 
 .square {
-	border: 1px solid black;
+	border: 1px solid;
 	height: 95px;
+	background: black;
+	opacity: 0.75;
+	border-radius: 10%;
 }
 
 #thirtyone {
 	border-radius: 100%;
+	background: white;
+	color: black;
+	font-weight: bold;
 }
 
+#gamehome {
+	margin-top: 45px;
+}
+
+
+/*Win screen*/
 #winner {
 	border: 1px solid black;
 	padding: 25px 0px;
+	background: black;
+	opacity: 0.75;
+	color: white;
+	border-radius: 10%;
 }
 
 #wininfo {
@@ -77,6 +133,8 @@ img#homelogo {
 	padding-bottom: 20px;
 }
 
+
+/*Info screen*/
 #gameinfo {
 	margin-top: 100px;
 }
@@ -84,12 +142,12 @@ img#homelogo {
 #infotext {
 	border: 1px solid black;
 	padding: 25px;
+	background: black;
+	opacity: 0.75;
+	color: white;
+	border-radius: 10%;
 }
 
 #infohead {
 	padding-bottom: 15px;
-}
-
-#gamehome {
-	margin-top: 45px;
 }

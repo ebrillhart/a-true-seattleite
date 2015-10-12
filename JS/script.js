@@ -49,5 +49,21 @@ $("#infohome").on("click", function(){
 	$("#homescreen").show();
 });
 
+// Game to home
+$("#gamehome").on("click", function(){
+	$("#game").hide();
+	$("#homescreen").show();
+});
+
+// button to test win text, delete when game finished
+$("#winbutton").on("click", function(){
+	$("#homescreen").hide();
+	$("#wininfo").show();
+});
+
+// Creating array of game board squares
+var squareArray = $(".square").map(parseInt(attr("value")));
+
+
 
 });

@@ -10,10 +10,10 @@
 </head>
 <body>
 	<!-- Header which is always present on-screen with game title-->
-	<div class="container" id="title">
+	<div class="container" id="titlediv">
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" >
-				<h2 class="text-center">Seattle Adventure</h2>
+				<h2 class="text-center" id="title">Seattle Adventure</h2>
 			</div>
 		</div>
 	</div>
@@ -44,7 +44,10 @@
 				<div class="row">
 					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
 						<button type="button" id="about" class="btn btn-default btn-xs center-block">About</button>
-					</div>	
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+						<button type="button" id="winbutton" class="btn btn-default btn-xs center-block">Win Text</button>
+					</div>		
 				</div>
 			</div>
 		</div>
@@ -55,7 +58,7 @@
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" id="rules">
 				<h3 class="text-center" id="rulestitle">Rules of Play</h3>
-				<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				<p class="text-center" id="rulestext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -89,7 +92,7 @@
 				<p class="text-center lead">Player Turn</p>
 				<p class="text-center lead">Spaces to Move</p>
 			</div>
-			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-right">
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-right" id="spindiv">
 				<img id="spinner" class="center-block img-responsive" src="images/whiteneedle.png">
 				<p class="text-center">Click to Spin</p>
 			</div>
@@ -197,9 +200,9 @@
 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4" id="infotext">
 				<h3 class="text-center" id="infohead">Game Info</h3>
 				<p class="text-center">Built from scratch by Emma Brillhart with HTML5/CSS3, Bootstrap, JavaScript, and jQuery.</p>
-				<p class="text-center">Background image from (source).</p>
+				<p class="text-center">Background image from http://desktop.freewallpaper4.me/view/<br>original/7083/aerial--photo-of-seattle.jpg.</p>
 				<p class="text-center">Space Needle icon created in Photoshop by Jenn Livermore from (source).</p>
-				<p class="text-center">Source Code: (GitHub link)</p>
+				<p class="text-center">Source Code: https://github.com/ebrillhart/seattle-adventure</p>
 				<!-- Home Button -->
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
 						<button class="btn btn-default center-block" id="infohome" type="submit">Home</button>
