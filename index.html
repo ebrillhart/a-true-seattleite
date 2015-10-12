@@ -44,10 +44,7 @@
 				<div class="row">
 					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
 						<button type="button" id="about" class="btn btn-default btn-xs center-block">About</button>
-					</div>
-					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
-						<button type="button" id="winbutton" class="btn btn-default btn-xs center-block">Win Text</button>
-					</div>		
+					</div>	
 				</div>
 			</div>
 		</div>
@@ -88,15 +85,18 @@
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-left">
 				<button class="btn btn-default pull-right" id="gamehome" type="submit">Home</button>
 			</div>	
+			<!-- Display of player turn and spaces to move -->
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" id="gametext">
-				<p class="text-center lead">Player Turn</p>
-				<p class="text-center lead">Spaces to Move</p>
+				<p class="text-center lead" id="playerturn">It's Player 1's turn! Click the Space Needle to start playing.</p>
+				<p class="text-center lead" id="spacestext"></p>
 			</div>
+			<!-- The "spinner" for determining moves -->
 			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-right" id="spindiv">
 				<img id="spinner" class="center-block img-responsive" src="images/whiteneedle.png">
 				<p class="text-center">Click to Spin</p>
 			</div>
 		</div>
+		<!-- The gameboard -->
 		<div class="row">
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="zero" value="0">
 				<p class="text-center" id="start">Start</p>
