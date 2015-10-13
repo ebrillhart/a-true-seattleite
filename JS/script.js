@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
+// *************************************
 // Global variables for game start state
+// *************************************
 var clickCount = 0;
 var spinResult = null; 
 var i = 0;
@@ -8,13 +10,13 @@ var j = 0;
 var bonus = 0;
 var penalty = 0;
 
-// creating the board logic
+// *********************************
+// Creating logic for board sequence
+// *********************************
 var squareList = $(".square");
 var board = squareList.map(function(obj){
 	return $(squareList[obj]);
 });
-
-console.log(board);
 
 board = board.sort(function(a, b) {
 	var value1 = parseInt(a.attr("value"));
@@ -26,11 +28,12 @@ board = board.sort(function(a, b) {
 	} else {
 		return 0;
 	};
-
 });
 
+// ******************
 // General game logic
 // moves for player 1
+// *******************
 var playerOneTurn = function() {
 	playerName = "Player One";
 
@@ -41,10 +44,12 @@ var playerOneTurn = function() {
 	};
 
 	var playerOneMove = board[i + spinResult];
+		// if win
 		if (i + spinResult >= 31) {
 			oneWins = "Player One"
 			winFunction(oneWins);
 		} else {
+			// else keep playing
 			if (board[i + spinResult] === board[j]) {
 				playerOneMove.css({backgroundColor: "purple"});
 			} else {
@@ -52,14 +57,15 @@ var playerOneTurn = function() {
 			};
 		};	
 	
-		i = i + spinResult;
-		checkBonusPenaltyOne();
-		i = i; 
-
+	i = i + spinResult;
+	checkBonusPenaltyOne();
+	i = i; 
 	$("#playerturn").html("It's Player 2's turn! Click the Space Needle to play.")	
 };
 
+// ******************
 // moves for player 2
+// ******************
 var playerTwoTurn = function() {
 	playerName = "Player Two";
 
@@ -70,10 +76,12 @@ var playerTwoTurn = function() {
 	};
 
 	var playerTwoMove = board[j + spinResult];
+		// if win
 		if (j + spinResult >= 31) {
 			twoWins = "Player Two"
 			winFunction(twoWins);
 		} else {
+			// else keep playing
 			if (board[j + spinResult] === board[j]) {
 				playerTwoMove.css({backgroundColor: "purple"});
 			} else {
@@ -81,15 +89,15 @@ var playerTwoTurn = function() {
 			};
 		};
 
-		j = j + spinResult;
-		
-		checkBonusPenaltyTwo();
-		j = j;
-
+	j = j + spinResult;
+	checkBonusPenaltyTwo();
+	j = j;
 	$("#playerturn").html("It's Player 1's turn! Click the Space Needle to play.")
 };
 
+// *****************************************
 // chain of events when "spinner" is clicked
+// *****************************************
 $("#spindiv").on("click", function() {
 	clickCount ++;
 	spinResult = Math.round((Math.random() * 5)+1);
@@ -114,22 +122,9 @@ $("#spindiv").on("click", function() {
 	
 });
 
-// functions that declare a winner
-// function checkWinOne () {
-// 	if (board[i + spinResult] >= board[31]) {
-// 		oneWins = "Player One"
-// 		winFunction(oneWins);
-// 	};
-// };
-
-// function checkWinTwo () {
-// 	if (board[j + spinResult] >= 31) {
-// 		twoWins = "Player Two";
-// 		winFunction(twoWins);
-// 	};
-// };
-
-
+// ************
+// win function
+// ************
 function winFunction(playerName) {
 	alert("Game Over!")
 	$("#game").fadeOut(1000);
@@ -137,11 +132,12 @@ function winFunction(playerName) {
 	$("#wintext").html("Congrats, " + playerName + " wins!");
 };
 
-
-// Bonus and Pentalty Logic
-// Check Bonuses and Penalties - would like to refactor this if I can figure out how
-	//Bonuses and penalties for player 1
+// ***********************************************************************
+// Bonus and penalty logic - would like to refactor if I can determine how
+// Logic for player one
+// ***********************************************************************
 function checkBonusPenaltyOne() {
+	// bonuses
 	if (i === 3) {
 		alert("The mountain is out! Move forward 4 spaces.");
 		bonus = 4;
@@ -226,6 +222,7 @@ function checkBonusPenaltyOne() {
 			playerOneMove.css({backgroundColor: "green"});
 		};
 		i = i + bonus;
+		// penalties
 	} else if (i === 6) {
 		alert("You buy a NorthFace raincoat but it's not black. Move back 2 spaces.");
 		penalty = 2;
@@ -316,8 +313,11 @@ function checkBonusPenaltyOne() {
 	};
 };
 
+// ****************************************
 // Check bonuses and penalties for player 2
+// ****************************************
 function checkBonusPenaltyTwo() {
+	// bonuses
 	if (j === 3) {
 		alert("The mountain is out! Move forward 4 spaces.");
 		bonus = 4;
@@ -402,6 +402,7 @@ function checkBonusPenaltyTwo() {
 			playerTwoMove.css({backgroundColor: "blue"});
 		};
 		j = j + bonus;
+		// penalties
 	} else if (j === 6) {
 		alert("You buy a NorthFace raincoat but it's not black. Move back 2 spaces.");
 		penalty = 2;
@@ -492,7 +493,10 @@ function checkBonusPenaltyTwo() {
 	};
 };
 
+// *********************************
 // Buttons switching between screens
+// *********************************
+
 // Homescreen to How-to
 $("#howtobutton").on("click", function(){
 	$("#homescreen").fadeOut(500);
@@ -565,4 +569,5 @@ $("#gamehome").on("click", function(){
 	$("#homescreen").delay(550).fadeIn(500);
 });	
 
+// end of jQuery call function
 });
