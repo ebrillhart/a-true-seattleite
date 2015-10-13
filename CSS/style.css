@@ -16,11 +16,41 @@ button {
  	background: none;
     border: 2px solid white;
     font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-family: Oxygen;
+}
+
+.btn-default:hover {
+	background: none;
+	border: 3px solid white;
+	font-weight: bolder;
+	color: white;
+}
+
+.btn-default:active {
+	background: white;
+	border: 3px solid black;
+	font-weight: bold;
+	color: black;
+}
+
+h3 {
+	letter-spacing: 5px;
+	word-spacing: 3px;
+	font-family: Oxygen;
+}
+
+p {
+	font-family: Karla;
 }
 
 /*Title container*/
 #title {
 	color: white;
+	letter-spacing: 10px;
+	word-spacing: 5px;
+	font-family: Oxygen;
 }
 
 /*Home Page*/
@@ -90,10 +120,15 @@ img#homelogo {
 	color: black;
 	font-weight: 300;
 	background: white !important;
+	border: none;
 }
 
-#start, #end {
+#start {
 	margin-top: 20px;
+}
+
+#end {
+	margin-top: 25px;
 }
 
 .square {
@@ -151,4 +186,8 @@ img#homelogo {
 
 #infohead {
 	padding-bottom: 15px;
+}
+
+#infohome {
+	margin-top: 10px;
 }

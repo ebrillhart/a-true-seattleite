@@ -32,30 +32,59 @@ board = board.sort(function(a, b) {
 // General game logic
 // moves for player 1
 var playerOneTurn = function() {
+	playerName = "Player One";
+
 	if (board[i] !== board[j]){
-	board[i].css({backgroundColor:"black"});
+		board[i].css({backgroundColor:"black"});
+	} else {
+		board[i].css({backgroundColor:"blue"});
 	};
 
 	var playerOneMove = board[i + spinResult];
-	playerOneMove.css({backgroundColor: "green"}).fadeIn(500);
-	i = i + spinResult
-	checkBonusPenaltyOne();
-	checkWinOne();
+		if (i + spinResult >= 31) {
+			oneWins = "Player One"
+			winFunction(oneWins);
+		} else {
+			if (board[i + spinResult] === board[j]) {
+				playerOneMove.css({backgroundColor: "purple"});
+			} else {
+				playerOneMove.css({backgroundColor: "green"});
+			};
+		};	
+	
+		i = i + spinResult;
+		checkBonusPenaltyOne();
+		i = i; 
 
 	$("#playerturn").html("It's Player 2's turn! Click the Space Needle to play.")	
 };
 
 // moves for player 2
 var playerTwoTurn = function() {
+	playerName = "Player Two";
+
 	if (board[j] !== board[i]){
-	board[j].css({backgroundColor:"black"});
+		board[j].css({backgroundColor:"black"});
+	} else {
+		board[j].css({backgroundColor:"green"});	
 	};
 
 	var playerTwoMove = board[j + spinResult];
-	playerTwoMove.css({backgroundColor: "blue"}).fadeIn(500);
-	j = j + spinResult
-	checkBonusPenaltyTwo();
-	checkWinTwo();
+		if (j + spinResult >= 31) {
+			twoWins = "Player Two"
+			winFunction(twoWins);
+		} else {
+			if (board[j + spinResult] === board[j]) {
+				playerTwoMove.css({backgroundColor: "purple"});
+			} else {
+				playerTwoMove.css({backgroundColor: "blue"});
+			};
+		};
+
+		j = j + spinResult;
+		
+		checkBonusPenaltyTwo();
+		j = j;
 
 	$("#playerturn").html("It's Player 1's turn! Click the Space Needle to play.")
 };
@@ -86,24 +115,25 @@ $("#spindiv").on("click", function() {
 });
 
 // functions that declare a winner
-function checkWinOne () {
-	if (i + spinResult >= 31) {
-		oneWins = "Player One"
-		winFunction(oneWins).delay(1000);
-	};
-};
+// function checkWinOne () {
+// 	if (board[i + spinResult] >= board[31]) {
+// 		oneWins = "Player One"
+// 		winFunction(oneWins);
+// 	};
+// };
 
-function checkWinTwo () {
-	if (j + spinResult >= 31) {
-		twoWins = "Player Two";
-		winFunction(twoWins).delay(1000);
-	};
-};
+// function checkWinTwo () {
+// 	if (board[j + spinResult] >= 31) {
+// 		twoWins = "Player Two";
+// 		winFunction(twoWins);
+// 	};
+// };
 
 
 function winFunction(playerName) {
-	$("#game").fadeOut(500);
-	$("#wininfo").delay(500).fadeIn(500);
+	alert("Game Over!")
+	$("#game").fadeOut(1000);
+	$("#wininfo").delay(1000).fadeIn(500);
 	$("#wintext").html("Congrats, " + playerName + " wins!");
 };
 
@@ -120,7 +150,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a bonus!");
 		playerOneMove = board[i + bonus];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i + bonus] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i + bonus;
 	} else if (i === 8) {
 		alert("You actually make friends with a native Seattleite. Move forward 6 spaces.");
@@ -130,7 +164,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a bonus!");
 		playerOneMove = board[i + bonus];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i + bonus] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i + bonus;
 	} else if (i === 11) {
 		alert("You arrive at a four-way stop and everyone actually proceeds according to the rules of the road. Move forward 3 spaces.");
@@ -140,7 +178,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a bonus!");
 		playerOneMove = board[i + bonus];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i + bonus] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i + bonus;
 	} else if (i === 16) {
 		alert("You buy a flannel. Probably from Goodwill. Move forward 1 space.");
@@ -150,7 +192,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a bonus!");
 		playerOneMove = board[i + bonus];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i + bonus] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i + bonus;
 	} else if (i === 21) {
 		alert("You find yourself defending Seattle weather to out-of-towners. Move forward 4 spaces.");
@@ -160,7 +206,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a bonus!");
 		playerOneMove = board[i + bonus];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i + bonus] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i + bonus;
 	} else if (i === 24) {
 		alert("You know how to correctly pronounce Puyallup. Move forward 4 spaces.");
@@ -170,7 +220,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a bonus!");
 		playerOneMove = board[i + bonus];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i + bonus] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i + bonus;
 	} else if (i === 6) {
 		alert("You buy a NorthFace raincoat but it's not black. Move back 2 spaces.");
@@ -180,7 +234,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a penalty.");
 		playerOneMove = board[i - penalty];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i - penalty] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i - penalty;
 	} else if (i === 10) {
 		alert("Your 4th of July party gets rained out. Move back 3 spaces.");
@@ -190,7 +248,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a penalty.");
 		playerOneMove = board[i - penalty];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i - penalty] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i - penalty; 
 	} else if (i === 13) {
 		alert("Your commute takes you down Mercer. Both ways. Move back 6 spaces.");
@@ -200,7 +262,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a penalty.");
 		playerOneMove = board[i - penalty];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i - penalty] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i - penalty; 
 	} else if (i === 18) {
 		alert("You use an umbrella. Move back 3 spaces.");
@@ -210,7 +276,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a penalty.");
 		playerOneMove = board[i - penalty];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i - penalty] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i - penalty; 
 	} else if (i === 22) {
 		alert("You live on the Eastside but tell people you live in Seattle. Move back 5 spaces.");
@@ -220,7 +290,11 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a penalty.");
 		playerOneMove = board[i - penalty];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i - penalty] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i - penalty;
 	} else if (i === 29) {
 		alert("You've lived here for 20 years but still aren't considered a 'real' Seattleite. Move back 9 spaces.");
@@ -230,12 +304,15 @@ function checkBonusPenaltyOne() {
 		};
 		$("#spacestext").html("Player One got a penalty.");
 		playerOneMove = board[i - penalty];
-		playerOneMove.css({backgroundColor: "green"});
+		if (board[i - penalty] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
+		} else {
+			playerOneMove.css({backgroundColor: "green"});
+		};
 		i = i - penalty;
 	} else {
 		bonus = 0;
 		penalty = 0;
-		i = i + bonus - penalty;
 	};
 };
 
@@ -249,7 +326,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a bonus!");
 		playerTwoMove = board[j + bonus];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j + bonus] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j + bonus;
 	} else if (j === 8) {
 		alert("You actually make friends with a native Seattleite. Move forward 6 spaces.");
@@ -259,7 +340,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a bonus!");
 		playerTwoMove = board[j + bonus];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j + bonus] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j + bonus;
 	} else if (j === 11) {
 		alert("You arrive at a four-way stop and everyone actually proceeds according to the rules of the road. Move forward 3 spaces.");
@@ -269,7 +354,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a bonus!");
 		playerTwoMove = board[j + bonus];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j + bonus] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j + bonus;
 	} else if (j === 16) {
 		alert("You buy a flannel. Probably from Goodwill. Move forward 1 space.");
@@ -279,7 +368,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a bonus!");
 		playerTwoMove = board[j + bonus];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j + bonus] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j + bonus;
 	} else if (j === 21) {
 		alert("You find yourself defending Seattle weather to out-of-towners. Move forward 4 spaces.");
@@ -289,7 +382,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a bonus!");
 		playerTwoMove = board[j + bonus];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j + bonus] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j + bonus;
 	} else if (j === 24) {
 		alert("You know how to correctly pronounce Puyallup. Move forward 4 spaces.");
@@ -299,7 +396,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a bonus!");
 		playerTwoMove = board[j + bonus];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j + bonus] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j + bonus;
 	} else if (j === 6) {
 		alert("You buy a NorthFace raincoat but it's not black. Move back 2 spaces.");
@@ -309,7 +410,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a penalty.");
 		playerTwoMove = board[j - penalty];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j - penalty] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j - penalty;
 	} else if (j === 10) {
 		alert("Your 4th of July party gets rained out. Move back 3 spaces.");
@@ -319,7 +424,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a penalty.");
 		playerTwoMove = board[j - penalty];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j - penalty] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j - penalty;
 	} else if (j === 13) {
 		alert("Your commute takes you down Mercer. Both ways. Move back 6 spaces.");
@@ -329,7 +438,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a penalty.");
 		playerTwoMove = board[j - penalty];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j - penalty] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j - penalty;
 	} else if (j === 18) {
 		alert("You use an umbrella. Move back 3 spaces.");
@@ -339,7 +452,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a penalty.");
 		playerTwoMove = board[j - penalty];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j - penalty] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j - penalty;
 	} else if (j === 22) {
 		alert("You live on the Eastside but tell people you live in Seattle. Move back 5 spaces.");
@@ -349,7 +466,11 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a penalty.");
 		playerTwoMove = board[j - penalty];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j - penalty] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j - penalty;
 	} else if (j === 29) {
 		alert("You've lived here for 20 years but still aren't considered a 'real' Seattleite. Move back 9 spaces.");
@@ -359,12 +480,15 @@ function checkBonusPenaltyTwo() {
 		};
 		$("#spacestext").html("Player Two got a penalty.");
 		playerTwoMove = board[j - penalty];
-		playerTwoMove.css({backgroundColor: "blue"});
+		if (board[j - penalty] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
+		} else {
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
 		j = j - penalty;
 	} else {
 		bonus = 0;
 		penalty = 0;
-		j = j + bonus - penalty;
 	};
 };
 
