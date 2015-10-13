@@ -324,12 +324,12 @@ function checkBonusPenaltyOne() {
 };
 
 // ****************************************
-// Check bonuses and penalties for player 2
+// Check bonuses and penalties for computer
 // ****************************************
 function checkBonusPenaltyTwo() {
 	// bonuses
 	if (j === 3) {
-		alert("The mountain is out! Move forward 4 spaces.");
+		alert("The computer gets a bonus!");
 		bonus = 4;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -343,7 +343,7 @@ function checkBonusPenaltyTwo() {
 		};
 		j = j + bonus;
 	} else if (j === 8) {
-		alert("You actually make friends with a native Seattleite. Move forward 6 spaces.");
+		alert("The computer gets a bonus!");
 		bonus = 6;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -357,7 +357,7 @@ function checkBonusPenaltyTwo() {
 		};
 		j = j + bonus;
 	} else if (j === 11) {
-		alert("You arrive at a four-way stop and everyone actually proceeds according to the rules of the road. Move forward 3 spaces.");
+		alert("The computer gets a bonus!");
 		bonus = 3;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -371,7 +371,7 @@ function checkBonusPenaltyTwo() {
 		};
 		j = j + bonus;
 	} else if (j === 16) {
-		alert("You buy a flannel. Probably from Goodwill. Move forward 1 space.");
+		alert("The computer gets a bonus!");
 		bonus = 1;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -385,7 +385,7 @@ function checkBonusPenaltyTwo() {
 		};
 		j = j + bonus;
 	} else if (j === 21) {
-		alert("You find yourself defending Seattle weather to out-of-towners. Move forward 4 spaces.");
+		alert("The computer gets a bonus!");
 		bonus = 4;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -399,7 +399,7 @@ function checkBonusPenaltyTwo() {
 		};
 		j = j + bonus;
 	} else if (j === 24) {
-		alert("You know how to correctly pronounce Puyallup. Move forward 4 spaces.");
+		alert("The computer gets a bonus!");
 		bonus = 4;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -414,7 +414,7 @@ function checkBonusPenaltyTwo() {
 		j = j + bonus;
 		// penalties
 	} else if (j === 6) {
-		alert("You buy a NorthFace raincoat but it's not black. Move back 2 spaces.");
+		alert("The computer gets a penalty!");
 		penalty = 2;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -428,7 +428,7 @@ function checkBonusPenaltyTwo() {
 		};
 		j = j - penalty;
 	} else if (j === 10) {
-		alert("Your 4th of July party gets rained out. Move back 3 spaces.");
+		alert("The computer gets a penalty!");
 		penalty = 3;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -442,7 +442,7 @@ function checkBonusPenaltyTwo() {
 		};
 		j = j - penalty;
 	} else if (j === 13) {
-		alert("Your commute takes you down Mercer. Both ways. Move back 6 spaces.");
+		alert("The computer gets a penalty!");
 		penalty = 6;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -456,7 +456,7 @@ function checkBonusPenaltyTwo() {
 		};
 		j = j - penalty;
 	} else if (j === 18) {
-		alert("You use an umbrella. Move back 3 spaces.");
+		alert("The computer gets a penalty!");
 		penalty = 3;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -470,7 +470,7 @@ function checkBonusPenaltyTwo() {
 		};
 		j = j - penalty;
 	} else if (j === 22) {
-		alert("You live on the Eastside but tell people you live in Seattle. Move back 5 spaces.");
+		alert("The computer gets a penalty!");
 		penalty = 5;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
@@ -484,7 +484,7 @@ function checkBonusPenaltyTwo() {
 		};
 		j = j - penalty;
 	} else if (j === 29) {
-		alert("You've lived here for 20 years but still aren't considered a 'real' Seattleite. Move back 9 spaces.");
+		alert("The computer gets a penalty!");
 		penalty = 9;
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
