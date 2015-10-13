@@ -55,12 +55,14 @@ var playerOneTurn = function() {
 		} else {
 			playerOneMove.css({backgroundColor: "green"});
 		};
-		i = i + spinResult;
-		checkBonusPenaltyOne();
-		i = i; 
-		$("#playerturn").html("It's the Computer's turn!");
-		setTimeout(autoClick, 800);
-	};		
+	i = i + spinResult;
+	setTimeout(checkBonusPenaltyOne, 500);
+	i = i; 
+	$("#playerturn").html("");
+	setTimeout(autoClick, 1300);
+	};	
+
+	$("#playerturn").html("It's the Computer's turn!");	
 };
 
 // ******************
@@ -77,49 +79,50 @@ var playerTwoTurn = function() {
 
 	var playerTwoMove = board[j + spinResult];
 		// if win
-		if (j + spinResult >= 31) {
-			twoWins = "Computer"
-			winFunction(twoWins);
+	if (j + spinResult >= 31) {
+		twoWins = "Computer"
+		winFunction(twoWins);
+	} else {
+		// else keep playing
+		if (board[j + spinResult] === board[i]) {
+			playerTwoMove.css({backgroundColor: "purple"});
 		} else {
-			// else keep playing
-			if (board[j + spinResult] === board[i]) {
-				playerTwoMove.css({backgroundColor: "purple"});
-			} else {
-				playerTwoMove.css({backgroundColor: "blue"});
-			};
-			j = j + spinResult;
-			checkBonusPenaltyTwo();
-			j = j;
-			$("#playerturn").html("It's your turn! Click the Space Needle to play.");
-		};	
+			playerTwoMove.css({backgroundColor: "blue"});
+		};
+	j = j + spinResult;
+	setTimeout(checkBonusPenaltyTwo, 500);
+	j = j;
+	};
+	
+	$("#playerturn").html("It's your turn! Click the Space Needle to play.");		
 };
 
 // *****************************************
 // chain of events when "spinner" is clicked
 // *****************************************
 $("#spindiv").on("click", function() {
-		clickCount ++;
-		spinResult = Math.round((Math.random() * 5)+1);
-		playerName = null;
+	clickCount ++;
+	spinResult = Math.round((Math.random() * 5)+1);
+	playerName = null;
 
-		function spinAlert() {
-			alert(playerName + " rolled a " + spinResult + "!");
-		};
+	function spinAlert() {
+		alert(playerName + " rolled a " + spinResult + "!");
+	};
 
-		// player location logic
-		if (clickCount % 2 === 0) {
-			playerName = "Computer";
-			spinAlert();
-			$("#spacestext").html(playerName + " moved " + spinResult + " spaces!");
-			playerTwoTurn();
-		} else {
-			playerName = "You";
-			spinAlert();
-			$("#spacestext").html(playerName + " moved " + spinResult + " spaces!");
-			playerOneTurn();
-		};
-		
-	});
+	// player location logic
+	if (clickCount % 2 === 0) {
+		playerName = "Computer";
+		spinAlert();
+		$("#spacestext").html(playerName + " moved " + spinResult + " spaces!");
+		playerTwoTurn();
+	} else {
+		playerName = "You";
+		spinAlert();
+		$("#spacestext").html(playerName + " moved " + spinResult + " spaces!");
+		playerOneTurn();	
+	};
+	
+});
 
 function autoClick() {	
 	$("#spindiv").trigger("click", function() {
