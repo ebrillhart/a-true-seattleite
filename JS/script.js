@@ -60,7 +60,7 @@ var playerOneTurn = function() {
 	i = i + spinResult;
 	checkBonusPenaltyOne();
 	i = i; 
-	$("#playerturn").html("It's Player 2's turn! Click the Space Needle to play.")	
+	$("#playerturn").html("It's Player Two's turn! Click the Space Needle to play.")	
 };
 
 // ******************
@@ -92,7 +92,7 @@ var playerTwoTurn = function() {
 	j = j + spinResult;
 	checkBonusPenaltyTwo();
 	j = j;
-	$("#playerturn").html("It's Player 1's turn! Click the Space Needle to play.")
+	$("#playerturn").html("It's Player One's turn! Click the Space Needle to play.")
 };
 
 // *****************************************
@@ -507,7 +507,7 @@ $("#howtobutton").on("click", function(){
 $("#startgame").on("click", function(){
 	$("#homescreen").fadeOut(500);
 	$("#game").delay(550).fadeIn(500);
-	$("#playerturn").html("It's Player 1's turn! Click the Space Needle to start playing.");
+	$("#playerturn").html("It's Player One's turn! Click the Space Needle to start playing.");
 	$("#spacestext").html("");
 	clickCount = 0;
 	i = 0;
@@ -531,7 +531,7 @@ $("#howtohome").on("click", function() {
 $("#howtostart").on("click", function(){
 	$("#howto").fadeOut(500);
 	$("#game").delay(550).fadeIn(500);
-	$("#playerturn").html("It's Player 1's turn! Click the Space Needle to start playing.");
+	$("#playerturn").html("It's Player One's turn! Click the Space Needle to start playing.");
 	$("#spacestext").html("");
 	clickCount = 0;
 	i = 0;
@@ -543,7 +543,7 @@ $("#howtostart").on("click", function(){
 $("#winstart").on("click", function(){
 	$("#wininfo").fadeOut(500);
 	$("#game").delay(550).fadeIn(500);
-	$("#playerturn").html("It's Player 1's turn! Click the Space Needle to start playing.");
+	$("#playerturn").html("It's Player One's turn! Click the Space Needle to start playing.");
 	$("#spacestext").html("");
 	clickCount = 0;
 	i = 0;

@@ -19,6 +19,7 @@ button {
     letter-spacing: 2px;
     word-spacing: 2px;
     font-family: Oxygen;
+    outline: none;
 }
 
 .btn-default:hover {
@@ -33,6 +34,7 @@ button {
 	border: 3px solid black;
 	font-weight: bold;
 	color: black;
+	outline: none;
 }
 
 h3 {
@@ -91,8 +93,9 @@ img#homelogo {
 	margin-top: 0;
 }
 
-
+/*************/
 /*Game screen*/
+/*************/
 #spinner {
 	height: 125px;
 	width: 75px;
@@ -128,7 +131,7 @@ img#homelogo {
 }
 
 #end {
-	margin-top: 25px;
+	margin-top: 28px;
 }
 
 .square {
@@ -144,10 +147,16 @@ img#homelogo {
 	background: white !important;
 	color: black;
 	font-weight: 300;
+	margin-left: 3px;
+	border: none;
 }
 
 #gamehome {
 	margin-top: 45px;
+}
+
+#rowtwo {
+	margin-bottom: 3px;
 }
 
 
