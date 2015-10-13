@@ -46,7 +46,7 @@ var playerOneTurn = function() {
 	var playerOneMove = board[i + spinResult];
 		// if win
 		if (i + spinResult >= 31) {
-			oneWins = "You"
+			oneWins = "you"
 			winFunction(oneWins);
 		} else {
 			// else keep playing
@@ -135,8 +135,8 @@ function winFunction(playerName) {
 	alert("Game Over!")
 	$("#game").fadeOut(1000);
 	$("#wininfo").delay(1000).fadeIn(500);
-	if (playerName === "You") {
-		$("#wintext").html("Congrats, " + playerName + " wins!");
+	if (playerName === "you") {
+		$("#wintext").html("Congrats, " + playerName + " win!");
 	} else {
 		$("#wintext").html("Bummer, the " + playerName + " wins!");
 	}	
