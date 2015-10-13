@@ -111,6 +111,18 @@ img#homelogo {
 	border-radius: 100%;
 }
 
+.bonus {
+	font-size: 2em;
+	margin-top: 25px;
+	color: white;
+}
+
+.penalty {
+	font-size: 2em;
+	margin-top: 25px;
+	color: white;
+}
+
 #spindiv:hover {
 	border: 2px solid white;
 }

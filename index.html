@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>A True Seattleite</title>
-	<link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,700|Asap|Karla' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/style.css">
@@ -63,8 +63,8 @@
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" id="rules">
 				<h3 class="text-center" id="rulestitle">Do You Have What it Takes to be a Real Seattleite?</h3>
-				<p class="text-center" id="rulestext">Can you overcome the Seattle freeze and escape pitfalls marking you as a transplant? Make it from the beginning to the end of the board before the computer, with some help and hindrance from Seattle newcomer milestones and mishaps.</p>
-				<p class="text-center">You are green, and the Computer is blue. Click the Space Needle icon in the upper right corner to determine how many spaces you'll move. Every so often, you'll land on a square that will give you a bonus and move you further along in the game, or a penalty that will knock you back. The first player to reach the end wins. Good luck, and may the realest Seattleite prevail!</p>
+				<p class="text-center" id="rulestext">Can you overcome the Seattle freeze and escape pitfalls marking you as a transplant? Make it from the beginning to the end of the board before the computer, with some help and hindrance from Seattle newcomer milestones and mishaps .</p>
+				<p class="text-center">You are green, and the Computer is blue. Click the Space Needle icon in the upper right corner to determine how many spaces you'll move. Every so often, you'll land on a square that will give you a bonus (sun) and move you further along in the game, or a penalty (cloud) that will knock you back. The first player to reach the end wins. Good luck, and may the realest Seattleite prevail!</p>
 					<!-- Home Button -->
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 						<button class="btn btn-default pull-right" id="howtohome" type="submit">Home</button>
@@ -109,56 +109,67 @@
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="two" value="2">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="three" value="3">
+				<p class="text-center bonus"><i class="fa fa-sun-o"></i></p>
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="four" value="4">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="five" value="5">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="six" value="6">
+				<p class="text-center penalty"><i class="fa fa-cloud"></i></p>
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="seven" value="7">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="eight" value="8">
+				<p class="text-center bonus"><i class="fa fa-sun-o"></i></p>
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="nine" value="9">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="ten" value="10">
+				<p class="text-center penalty"><i class="fa fa-cloud"></i></p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-10 col-sm-offset-10 col-md-offset-10 col-lg-offset-10 square" id="eleven" value="11">
+				<p class="text-center bonus"><i class="fa fa-sun-o"></i></p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="twentyone" value="21">
+				<p class="text-center bonus"><i class="fa fa-sun-o"></i></p>
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twenty" value="20">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="nineteen" value="19">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="eighteen" value="18">
+				<p class="text-center penalty"><i class="fa fa-cloud"></i></p>
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="seventeen" value="17">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="sixteen" value="16">
+				<p class="text-center bonus"><i class="fa fa-sun-o"></i></p>
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="fifteen" value="15">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="fourteen" value="14">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="thirteen" value="13">
+				<p class="text-center penalty"><i class="fa fa-cloud"></i></p>
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twelve" value="12">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="twentytwo" value="22">
+				<p class="text-center penalty"><i class="fa fa-cloud"></i></p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="twentythree" value="23">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyfour" value="24">
+				<p class="text-center bonus"><i class="fa fa-sun-o"></i></p>
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyfive" value="25">
 			</div>
@@ -169,6 +180,7 @@
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyeight" value="28">
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentynine" value="29">
+				<p class="text-center penalty"><i class="fa fa-cloud"></i></p>
 			</div>
 			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="thirty" value="30">
 			</div>
