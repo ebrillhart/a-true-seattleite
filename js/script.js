@@ -44,23 +44,23 @@ var playerOneTurn = function() {
 	};
 
 	var playerOneMove = board[i + spinResult];
-		// if win
-		if (i + spinResult >= 31) {
-			oneWins = "you"
-			winFunction(oneWins);
+	// if win
+	if (i + spinResult >= 31) {
+		oneWins = "you"
+		winFunction(oneWins);
+	} else {
+		// else keep playing
+		if (board[i + spinResult] === board[j]) {
+			playerOneMove.css({backgroundColor: "purple"});
 		} else {
-			// else keep playing
-			if (board[i + spinResult] === board[j]) {
-				playerOneMove.css({backgroundColor: "purple"});
-			} else {
-				playerOneMove.css({backgroundColor: "green"});
-			};
-			i = i + spinResult;
-			checkBonusPenaltyOne();
-			i = i; 
-			$("#playerturn").html("It's the Computer's turn!");
-			setTimeout(autoClick(), 5000);
-		};		
+			playerOneMove.css({backgroundColor: "green"});
+		};
+		i = i + spinResult;
+		checkBonusPenaltyOne();
+		i = i; 
+		$("#playerturn").html("It's the Computer's turn!");
+		setTimeout(autoClick, 800);
+	};		
 };
 
 // ******************
