@@ -59,7 +59,7 @@ var playerOneTurn = function() {
 			checkBonusPenaltyOne();
 			i = i; 
 			$("#playerturn").html("It's the Computer's turn!");
-			autoClick();
+			setTimeout(autoClick(), 5000);
 		};		
 };
 
