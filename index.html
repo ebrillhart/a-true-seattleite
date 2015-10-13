@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Seattle Adventure</title>
+	<link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,700|Asap|Karla' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- ******************************************************* -->
+	<!-- Header which is always present on-screen with game title-->
+	<!-- ******************************************************* -->
+	<div class="container" id="titlediv">
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" >
+				<h2 class="text-center" id="title">A TRUE SEATTLEITE</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- *************************************************************** -->
+	<!-- Home screen with options for game play, info, and rules of play -->
+	<!-- *************************************************************** -->	
+	<div class="container" id="homescreen">
+		<!-- Row for overall homescreen content -->
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+				<!-- Row for the logo image -->
+				<div class="row">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+						<img id="homelogo" class="center-block img-responsive" src="images/whiteneedle.png">
+					</div>
+				</div>
+				<!-- Row for the larger game play and how to buttons -->
+				<div class="row" id="gamebuttons">
+					<!-- How-To Button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+						<button class="btn btn-default pull-right" id="howtobutton" type="submit">Rules</button>
+					</div>	
+					<!-- New Game button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<button class="btn btn-default pull-left" id="startgame" type="submit">Start</button>
+					</div>
+				</div>
+				<!-- Row for the smaller about button -->
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+						<button type="button" id="about" class="btn btn-default btn-xs center-block">About</button>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ******************************************************** -->
+	<!-- Rules of the game, which can be toggled from home screen -->
+	<!-- ******************************************************** -->
+	<div class="container" id="howto" hidden>
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" id="rules">
+				<h3 class="text-center" id="rulestitle">Do You Have What it Takes to be a Real Seattleite?</h3>
+				<p class="text-center" id="rulestext">Can you overcome the Seattle freeze and escape pitfalls marking you as a transplant? Make it from the beginning to the end of the board before your opponent, with some help and hindrance from Seattle newcomer milestones and mishaps.</p>
+				<p class="text-center">Player One is green, and Player Two is blue. Click the Space Needle icon in the upper right corner to determine how many spaces you'll move. Every so often, you'll land on a square that will give you a bonus and move you further along in the game, or a penalty that will knock you back. The first player to reach the end wins. Good luck, and may the realest Seattleite win!</p>
+					<!-- Home Button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+						<button class="btn btn-default pull-right" id="howtohome" type="submit">Home</button>
+					</div>	
+					<!-- New Game button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<button class="btn btn-default pull-left" id="howtostart" type="submit">Start</button>
+					</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ************** -->
+	<!-- The game board -->
+	<!-- ************** -->
+	<div class="container" id="game" hidden>
+		<div class="row" id="gamebanner">
+			<!-- Home Button -->
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-left">
+				<button class="btn btn-default pull-right" id="gamehome" type="submit">Home</button>
+			</div>	
+			<!-- Display of player turn and spaces to move -->
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" id="gametext">
+				<p class="text-center lead" id="playerturn">It's Player One's turn! Click the Space Needle to start playing.</p>
+				<p class="text-center" id="spacestext"></p>
+			</div>
+			<!-- The "spinner" for determining moves -->
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 pull-right" id="spindiv">
+				<img id="spinner" class="center-block img-responsive" src="images/whiteneedle.png">
+				<p class="text-center">Click to Spin</p>
+			</div>
+		</div>
+		<!-- The gameboard -->
+		<div class="row" id="rowtwo">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="zero" value="0">
+				<p class="text-center" id="start">You must be new here.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="one" value="1">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="two" value="2">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="three" value="3">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="four" value="4">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="five" value="5">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="six" value="6">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="seven" value="7">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="eight" value="8">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="nine" value="9">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="ten" value="10">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-10 col-sm-offset-10 col-md-offset-10 col-lg-offset-10 square" id="eleven" value="11">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="twentyone" value="21">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twenty" value="20">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="nineteen" value="19">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="eighteen" value="18">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="seventeen" value="17">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="sixteen" value="16">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="fifteen" value="15">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="fourteen" value="14">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="thirteen" value="13">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twelve" value="12">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="twentytwo" value="22">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 square" id="twentythree" value="23">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyfour" value="24">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyfive" value="25">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentysix" value="26">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyseven" value="27">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentyeight" value="28">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="twentynine" value="29">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="thirty" value="30">
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 square" id="thirtyone" value="31">
+				<p class="text-center" id="end">Seattle Insider</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- ************************************** -->
+	<!-- Win announcement at completion of game -->
+	<!-- ************************************** -->
+	<div class="container" id="wininfo" hidden>
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4" id="winner">
+				<p class="lead text-center" id="wintext">A Player Wins!</p>
+					<!-- Home Button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+						<button class="btn btn-default pull-right" id="winhome" type="submit">Home</button>
+					</div>	
+					<!-- New Game button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<button class="btn btn-default pull-left" id="winstart" type="submit">New Game</button>
+					</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ************************************* -->
+	<!-- General info about game credits, etc. -->
+	<!-- ************************************* -->
+	<div class="container" id="gameinfo" hidden>
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4" id="infotext">
+				<h3 class="text-center" id="infohead">Game Info</h3>
+				<p class="text-center">Built from scratch by Emma Brillhart with HTML5/CSS3, Bootstrap, JavaScript, and jQuery.</p>
+				<p class="text-center"><a href="http://desktop.freewallpaper4.me/view/<br>original/7083/aerial--photo-of-seattle.jpg">Background image source</a></p>
+				<p class="text-center">Space Needle icon created in Photoshop by Jenn Livermore from <a href="http://www.franticstamper.com/thumbnail.asp?file=assets/images/products/savvy%20stamps/sav-die-10017.jpg&maxx=400&maxy=0">this image</a></p>
+				<p class="text-center"><a href="https://github.com/ebrillhart/seattle-adventure">Source Code</a></p>
+				<!-- Home Button -->
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+						<button class="btn btn-default center-block" id="infohome" type="submit">Home</button>
+					</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Scripts and end of game HTML -->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="dist/sweetalert.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

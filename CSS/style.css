@@ -1,0 +1,205 @@
+body {
+	background: url("../images/seattlebackground.jpg") no-repeat center center fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+}
+
+button {
+	background-color: none;
+	border: 2px solid black;
+}
+
+.btn-default {
+    color: white;
+ 	background: none;
+    border: 2px solid white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-family: Oxygen;
+    outline: none;
+    border-radius: 100%;
+    padding: 10px 8px;
+    text-align: center;
+}
+
+.btn-default:hover {
+	background: none;
+	border: 3px solid white;
+	font-weight: bolder;
+	color: white;
+}
+
+.btn-default:active {
+	background: white;
+	border: 3px solid black;
+	font-weight: bold;
+	color: black;
+	outline: none;
+}
+
+h3 {
+	letter-spacing: 5px;
+	word-spacing: 3px;
+	font-family: Oxygen;
+}
+
+p {
+	font-family: Karla;
+}
+
+/*Title container*/
+#title {
+	color: white;
+	letter-spacing: 10px;
+	word-spacing: 5px;
+	font-family: Oxygen;
+}
+
+/*Home Page*/
+img#homelogo {
+	height: 150px;
+	width: 100px;
+}
+
+#homescreen {
+	margin-top: 100px;
+}
+
+#about {
+	margin-top: 10px;
+}
+
+#gamebuttons {
+	margin-top: 20px;
+}
+
+
+/*How to screen*/
+#rules {
+	margin-top: 50px;
+	border: 1px solid black;
+	padding: 25px;
+	background: black;
+	opacity: 0.75;
+	color: white;
+	border-radius: 10%;
+}
+
+#rulestext {
+	padding-bottom: 25px;
+}
+
+#rulestitle {
+	margin-top: 0;
+}
+
+/*************/
+/*Game screen*/
+/*************/
+#spinner {
+	height: 125px;
+	width: 75px;
+	cursor: pointer;
+}
+
+#spindiv {
+	color: white;
+	font-weight: bold;
+}
+
+#gametext {
+	margin-top: 30px;
+	color: white;
+	font-weight: bold;
+}
+
+#game {
+	margin-top: 25px;
+	margin-bottom: 100px;
+}
+
+#zero {
+	border-radius: 100%;
+	color: black;
+	font-weight: 300;
+	background: white !important;
+	border: none;
+}
+
+#start {
+	margin-top: 20px;
+}
+
+#end {
+	margin-top: 28px;
+}
+
+.square {
+	border: 1px solid;
+	height: 95px;
+	background: black;
+	opacity: 0.75;
+	border-radius: 10%;
+}
+
+#thirtyone {
+	border-radius: 100%;
+	background: white !important;
+	color: black;
+	font-weight: 300;
+	margin-left: 3px;
+	border: none;
+}
+
+#gamehome {
+	margin-top: 45px;
+}
+
+#rowtwo {
+	margin-bottom: 3px;
+}
+
+
+/*Win screen*/
+#winner {
+	border: 1px solid black;
+	padding: 25px 0px;
+	background: black;
+	opacity: 0.75;
+	color: white;
+	border-radius: 10%;
+}
+
+#wininfo {
+	margin-top: 100px;
+}
+
+#wintext {
+	padding-bottom: 20px;
+}
+
+
+/*Info screen*/
+#gameinfo {
+	margin-top: 100px;
+}
+
+#infotext {
+	border: 1px solid black;
+	padding: 25px;
+	background: black;
+	opacity: 0.75;
+	color: white;
+	border-radius: 10%;
+}
+
+#infohead {
+	padding-bottom: 15px;
+}
+
+#infohome {
+	margin-top: 10px;
+}
