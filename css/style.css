@@ -108,6 +108,18 @@ img#homelogo {
 #spindiv {
 	color: white;
 	font-weight: bold;
+	border-radius: 100%;
+	border: 1px solid white;
+}
+
+#spindiv:hover {
+	border: 2px solid white;
+}
+
+#spindiv:active {
+	border: 3px solid white;
+	background: black;
+	opacity: 0.5;
 }
 
 #gametext {
