@@ -30,12 +30,12 @@ board = board.sort(function(a, b) {
 	};
 });
 
-// ******************
-// General game logic
+// ***********************************
+// General game logic AGAINST COMPUTER
 // moves for player 1
-// *******************
+// ***********************************
 var playerOneTurn = function() {
-	playerName = "Player One";
+	playerName = "You";
 
 	if (board[i] !== board[j]){
 		board[i].css({backgroundColor:"black"});
@@ -46,7 +46,7 @@ var playerOneTurn = function() {
 	var playerOneMove = board[i + spinResult];
 		// if win
 		if (i + spinResult >= 31) {
-			oneWins = "Player One"
+			oneWins = "You"
 			winFunction(oneWins);
 		} else {
 			// else keep playing
@@ -55,19 +55,19 @@ var playerOneTurn = function() {
 			} else {
 				playerOneMove.css({backgroundColor: "green"});
 			};
-		};	
-	
-	i = i + spinResult;
-	checkBonusPenaltyOne();
-	i = i; 
-	$("#playerturn").html("It's Player Two's turn! Click the Space Needle to play.")	
+			i = i + spinResult;
+			checkBonusPenaltyOne();
+			i = i; 
+			$("#playerturn").html("It's the Computer's turn!");
+			autoClick();
+		};		
 };
 
 // ******************
 // moves for player 2
 // ******************
 var playerTwoTurn = function() {
-	playerName = "Player Two";
+	playerName = "Computer";
 
 	if (board[j] !== board[i]){
 		board[j].css({backgroundColor:"black"});
@@ -78,7 +78,7 @@ var playerTwoTurn = function() {
 	var playerTwoMove = board[j + spinResult];
 		// if win
 		if (j + spinResult >= 31) {
-			twoWins = "Player Two"
+			twoWins = "Computer"
 			winFunction(twoWins);
 		} else {
 			// else keep playing
@@ -87,40 +87,46 @@ var playerTwoTurn = function() {
 			} else {
 				playerTwoMove.css({backgroundColor: "blue"});
 			};
-		};
-
-	j = j + spinResult;
-	checkBonusPenaltyTwo();
-	j = j;
-	$("#playerturn").html("It's Player One's turn! Click the Space Needle to play.")
+			j = j + spinResult;
+			checkBonusPenaltyTwo();
+			j = j;
+			$("#playerturn").html("It's your turn! Click the Space Needle to play.");
+		};	
 };
 
 // *****************************************
 // chain of events when "spinner" is clicked
 // *****************************************
 $("#spindiv").on("click", function() {
-	clickCount ++;
-	spinResult = Math.round((Math.random() * 5)+1);
-	playerName = null;
+		clickCount ++;
+		spinResult = Math.round((Math.random() * 5)+1);
+		playerName = null;
 
-	function spinAlert() {
-		alert(playerName + " rolled a " + spinResult + "!");
-	};
+		function spinAlert() {
+			alert(playerName + " rolled a " + spinResult + "!");
+		};
 
-	// player location logic
-	if (clickCount % 2 === 0) {
-		playerName = "Player Two";
-		spinAlert();
-		$("#spacestext").html(playerName + " moved " + spinResult + " spaces!");
-		playerTwoTurn()
-	} else {
-		playerName = "Player One";
-		spinAlert();
-		$("#spacestext").html(playerName + " moved " + spinResult + " spaces!");
-		playerOneTurn()	
-	};
-	
-});
+		// player location logic
+		if (clickCount % 2 === 0) {
+			playerName = "Computer";
+			spinAlert();
+			$("#spacestext").html(playerName + " moved " + spinResult + " spaces!");
+			playerTwoTurn();
+		} else {
+			playerName = "You";
+			spinAlert();
+			$("#spacestext").html(playerName + " moved " + spinResult + " spaces!");
+			playerOneTurn();
+		};
+		
+	});
+
+function autoClick() {	
+	$("#spindiv").trigger("click", function() {
+		clickCount ++;
+		spinResult = Math.round((Math.random() * 5)+1);
+	});
+};	
 
 // ************
 // win function
@@ -129,7 +135,11 @@ function winFunction(playerName) {
 	alert("Game Over!")
 	$("#game").fadeOut(1000);
 	$("#wininfo").delay(1000).fadeIn(500);
-	$("#wintext").html("Congrats, " + playerName + " wins!");
+	if (playerName === "You") {
+		$("#wintext").html("Congrats, " + playerName + " wins!");
+	} else {
+		$("#wintext").html("Bummer, the " + playerName + " wins!");
+	}	
 };
 
 // ***********************************************************************
@@ -144,7 +154,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a bonus!");
+		$("#spacestext").html("You got a bonus!");
 		playerOneMove = board[i + bonus];
 		if (board[i + bonus] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -158,7 +168,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a bonus!");
+		$("#spacestext").html("You got a bonus!");
 		playerOneMove = board[i + bonus];
 		if (board[i + bonus] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -172,7 +182,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a bonus!");
+		$("#spacestext").html("You got a bonus!");
 		playerOneMove = board[i + bonus];
 		if (board[i + bonus] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -186,7 +196,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a bonus!");
+		$("#spacestext").html("You got a bonus!");
 		playerOneMove = board[i + bonus];
 		if (board[i + bonus] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -200,7 +210,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a bonus!");
+		$("#spacestext").html("You got a bonus!");
 		playerOneMove = board[i + bonus];
 		if (board[i + bonus] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -214,7 +224,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a bonus!");
+		$("#spacestext").html("You got a bonus!");
 		playerOneMove = board[i + bonus];
 		if (board[i + bonus] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -229,7 +239,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a penalty.");
+		$("#spacestext").html("You got a penalty.");
 		playerOneMove = board[i - penalty];
 		if (board[i - penalty] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -243,7 +253,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a penalty.");
+		$("#spacestext").html("You got a penalty.");
 		playerOneMove = board[i - penalty];
 		if (board[i - penalty] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -257,7 +267,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a penalty.");
+		$("#spacestext").html("You got a penalty.");
 		playerOneMove = board[i - penalty];
 		if (board[i - penalty] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -271,7 +281,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a penalty.");
+		$("#spacestext").html("You got a penalty.");
 		playerOneMove = board[i - penalty];
 		if (board[i - penalty] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -285,7 +295,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a penalty.");
+		$("#spacestext").html("You got a penalty.");
 		playerOneMove = board[i - penalty];
 		if (board[i - penalty] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -299,7 +309,7 @@ function checkBonusPenaltyOne() {
 		if (board[i] !== board[j]){
 			board[i].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player One got a penalty.");
+		$("#spacestext").html("You got a penalty.");
 		playerOneMove = board[i - penalty];
 		if (board[i - penalty] === board[j]) {
 			playerOneMove.css({backgroundColor: "purple"});
@@ -324,7 +334,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a bonus!");
+		$("#spacestext").html("The Computer got a bonus!");
 		playerTwoMove = board[j + bonus];
 		if (board[j + bonus] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -338,7 +348,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a bonus!");
+		$("#spacestext").html("The Computer got a bonus!");
 		playerTwoMove = board[j + bonus];
 		if (board[j + bonus] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -352,7 +362,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a bonus!");
+		$("#spacestext").html("The Computer got a bonus!");
 		playerTwoMove = board[j + bonus];
 		if (board[j + bonus] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -366,7 +376,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a bonus!");
+		$("#spacestext").html("The Computer got a bonus!");
 		playerTwoMove = board[j + bonus];
 		if (board[j + bonus] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -380,7 +390,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a bonus!");
+		$("#spacestext").html("The Computer got a bonus!");
 		playerTwoMove = board[j + bonus];
 		if (board[j + bonus] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -394,7 +404,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a bonus!");
+		$("#spacestext").html("The Computer got a bonus!");
 		playerTwoMove = board[j + bonus];
 		if (board[j + bonus] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -409,7 +419,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a penalty.");
+		$("#spacestext").html("The Computer got a penalty.");
 		playerTwoMove = board[j - penalty];
 		if (board[j - penalty] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -423,7 +433,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a penalty.");
+		$("#spacestext").html("The Computer got a penalty.");
 		playerTwoMove = board[j - penalty];
 		if (board[j - penalty] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -437,7 +447,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a penalty.");
+		$("#spacestext").html("The Computer got a penalty.");
 		playerTwoMove = board[j - penalty];
 		if (board[j - penalty] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -451,7 +461,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a penalty.");
+		$("#spacestext").html("The Computer got a penalty.");
 		playerTwoMove = board[j - penalty];
 		if (board[j - penalty] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -465,7 +475,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a penalty.");
+		$("#spacestext").html("The Computer got a penalty.");
 		playerTwoMove = board[j - penalty];
 		if (board[j - penalty] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -479,7 +489,7 @@ function checkBonusPenaltyTwo() {
 		if (board[i] !== board[j]){
 			board[j].css({backgroundColor:"black"});
 		};
-		$("#spacestext").html("Player Two got a penalty.");
+		$("#spacestext").html("The Computer got a penalty.");
 		playerTwoMove = board[j - penalty];
 		if (board[j - penalty] === board[i]) {
 			playerTwoMove.css({backgroundColor: "purple"});
@@ -507,7 +517,7 @@ $("#howtobutton").on("click", function(){
 $("#startgame").on("click", function(){
 	$("#homescreen").fadeOut(500);
 	$("#game").delay(550).fadeIn(500);
-	$("#playerturn").html("It's Player One's turn! Click the Space Needle to start playing.");
+	$("#playerturn").html("It's your turn! Click the Space Needle to start playing.");
 	$("#spacestext").html("");
 	clickCount = 0;
 	i = 0;
@@ -531,7 +541,7 @@ $("#howtohome").on("click", function() {
 $("#howtostart").on("click", function(){
 	$("#howto").fadeOut(500);
 	$("#game").delay(550).fadeIn(500);
-	$("#playerturn").html("It's Player One's turn! Click the Space Needle to start playing.");
+	$("#playerturn").html("It's your turn! Click the Space Needle to start playing.");
 	$("#spacestext").html("");
 	clickCount = 0;
 	i = 0;
@@ -543,7 +553,7 @@ $("#howtostart").on("click", function(){
 $("#winstart").on("click", function(){
 	$("#wininfo").fadeOut(500);
 	$("#game").delay(550).fadeIn(500);
-	$("#playerturn").html("It's Player One's turn! Click the Space Needle to start playing.");
+	$("#playerturn").html("It's your turn! Click the Space Needle to start playing.");
 	$("#spacestext").html("");
 	clickCount = 0;
 	i = 0;
