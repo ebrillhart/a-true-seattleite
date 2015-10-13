@@ -82,7 +82,7 @@ var playerTwoTurn = function() {
 			winFunction(twoWins);
 		} else {
 			// else keep playing
-			if (board[j + spinResult] === board[j]) {
+			if (board[j + spinResult] === board[i]) {
 				playerTwoMove.css({backgroundColor: "purple"});
 			} else {
 				playerTwoMove.css({backgroundColor: "blue"});

@@ -20,6 +20,9 @@ button {
     word-spacing: 2px;
     font-family: Oxygen;
     outline: none;
+    border-radius: 100%;
+    padding: 10px 8px;
+    text-align: center;
 }
 
 .btn-default:hover {
