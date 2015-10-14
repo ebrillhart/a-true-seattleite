@@ -103,6 +103,7 @@ img#homelogo {
 	height: 125px;
 	width: 75px;
 	cursor: pointer;
+	opacity: 1 !important;
 }
 
 #spindiv {
@@ -124,13 +125,14 @@ img#homelogo {
 }
 
 #spindiv:hover {
-	border: 2px solid white;
+	background: black;
+	background-opacity: 0.5;
 }
 
 #spindiv:active {
 	border: 3px solid white;
 	background: black;
-	opacity: 0.5;
+	background-opacity: 0.5;
 }
 
 #gametext {
@@ -152,6 +154,10 @@ img#homelogo {
 	border: none;
 }
 
+#zero:hover {
+	margin-bottom: 2px;
+}
+
 #start {
 	margin-top: 20px;
 }
@@ -168,13 +174,23 @@ img#homelogo {
 	border-radius: 10%;
 }
 
+.square:hover {
+	border: 1px solid white;
+}
+
 #thirtyone {
 	border-radius: 100%;
 	background: white !important;
 	color: black;
 	font-weight: 300;
 	margin-left: 3px;
-	border: none;
+	border: 1px solid;
+	border-color: none;
+}
+
+#thirtyone:hover {
+	border: 1px solid black;
+	margin-left: 5px;
 }
 
 #gamehome {

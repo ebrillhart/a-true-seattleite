@@ -679,5 +679,10 @@ $("#gamehome").on("click", function(){
 	$("#homescreen").delay(550).fadeIn(500);
 });	
 
+// mini animation
+$("#shake").on("click", function() {
+	$("#shake").effect("pulsate");
+});
+
 // end of jQuery call function
 });
