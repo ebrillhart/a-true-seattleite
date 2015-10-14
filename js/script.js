@@ -90,7 +90,7 @@ var playerTwoTurn = function() {
 			playerTwoMove.css({backgroundColor: "blue"});
 		};
 	j = j + spinResult;
-	setTimeout(checkBonusPenaltyTwo, 500);
+	setTimeout(checkBonusPenaltyTwo, 300);
 	j = j;
 	};
 	
