@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 // *************************************
 // Global variables for game start state
 // *************************************
@@ -17,7 +16,6 @@ var move = new Audio("audio/success.wav");
 var bonusSound = new Audio("audio/bonus.wav");
 var penaltySound = new Audio("audio/penalty.wav");
 var gameover = new Audio("audio/gameover.wav");
-var clickSound = new Audio("audio/click.wav");
 
 // *********************************
 // Creating logic for board sequence
@@ -39,10 +37,10 @@ board = board.sort(function(a, b) {
 	};
 });
 
-// ***********************************
-// General game logic AGAINST COMPUTER
+// ******************
+// General game logic
 // moves for player 1
-// ***********************************
+// ******************
 var playerOneTurn = function() {
 	playerName = "You";
 
@@ -122,7 +120,7 @@ $("#spindiv").on("click", function() {
 		alert(playerName + " rolled a " + spinResult + "!");
 	};
 
-	// player location logic
+	// player turn
 	if (clickCount % 2 === 0) {
 		$("#spinner").effect("shake");
 		playerName = "Computer";
@@ -139,6 +137,9 @@ $("#spindiv").on("click", function() {
 	
 });
 
+// ********************************
+// auto-click function for computer
+// ********************************
 function autoClick() {	
 	$("#spindiv").trigger("click", function() {
 		clickCount ++;
@@ -599,17 +600,14 @@ function checkBonusPenaltyTwo() {
 // *********************************
 // Buttons switching between screens
 // *********************************
-
 // Homescreen to How-to
 $("#howtobutton").on("click", function(){
-	clickSound.play();
 	$("#homescreen").fadeOut(500);
 	$("#howto").delay(550).fadeIn(500);
 });
 
 // Homescreen to game
 $("#startgame").on("click", function(){
-	clickSound.play();
 	$("#homescreen").fadeOut(500);
 	$("#game").delay(550).fadeIn(500);
 	$("#playerturn").html("It's your turn! Click the Space Needle to start playing.");
@@ -622,21 +620,18 @@ $("#startgame").on("click", function(){
 
 // Homescreen to info
 $("#about").on("click", function() {
-	clickSound.play();
 	$("#homescreen").fadeOut(500);
 	$("#gameinfo").delay(550).fadeIn(500);
 });
 
 // How-to to Home
 $("#howtohome").on("click", function() {
-	clickSound.play();
 	$("#howto").fadeOut(500);
 	$("#homescreen").delay(550).fadeIn(500);
 });
 
 // How-to to game
 $("#howtostart").on("click", function(){
-	clickSound.play();
 	$("#howto").fadeOut(500);
 	$("#game").delay(550).fadeIn(500);
 	$("#playerturn").html("It's your turn! Click the Space Needle to start playing.");
@@ -649,7 +644,6 @@ $("#howtostart").on("click", function(){
 
 // Win screen to game
 $("#winstart").on("click", function(){
-	clickSound.play();
 	$("#wininfo").fadeOut(500);
 	$("#game").delay(550).fadeIn(500);
 	$("#playerturn").html("It's your turn! Click the Space Needle to start playing.");
@@ -662,34 +656,26 @@ $("#winstart").on("click", function(){
 
 // Win screen to home
 $("#winhome").on("click", function(){
-	clickSound.play();
 	$("#wininfo").fadeOut(500);
 	$("#homescreen").delay(550).fadeIn(500);
 });
 
 // Info to home
 $("#infohome").on("click", function(){
-	clickSound.play();
 	$("#gameinfo").fadeOut(500);
 	$("#homescreen").delay(550).fadeIn(500);
 });
 
 // Game to home
 $("#gamehome").on("click", function(){
-	clickSound.play();
 	$("#game").fadeOut(500);
 	$("#homescreen").delay(550).fadeIn(500);
 });	
-
-// hide alerts
-$("#okaybutton").on("click", function() {
-	$("#alertdiv").hide();
-});
 
 // mini animation
 $("#shake").on("click", function() {
 	$("#shake").effect("pulsate");
 });
 
-// end of jQuery call function
+
 });

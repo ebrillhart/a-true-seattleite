@@ -1,3 +1,6 @@
+/*=========================
+overall styling across game
+=========================*/
 body {
 	background: url("../images/seattlebackground.jpg") no-repeat center center fixed;
   	-webkit-background-size: cover;
@@ -50,7 +53,9 @@ p {
 	font-family: Oxygen;
 }
 
-/*Title container*/
+/*===============
+Title Container
+===============*/
 #title {
 	color: white;
 	letter-spacing: 10px;
@@ -58,7 +63,9 @@ p {
 	font-family: Oxygen;
 }
 
-/*Home Page*/
+/*=========
+Home Page
+=========*/
 img#homelogo {
 	height: 150px;
 	width: 100px;
@@ -77,8 +84,9 @@ img#homelogo {
 	margin-top: 20px;
 }
 
-
-/*How to screen*/
+/*============
+Rules Screen
+============*/
 #rules {
 	margin-top: 50px;
 	border: 1px solid black;
@@ -97,9 +105,9 @@ img#homelogo {
 	margin-top: 0;
 }
 
-/*************/
-/*Game screen*/
-/*************/
+/*==========
+Game Screen
+==========*/
 #spinner {
 	height: 125px;
 	width: 75px;
@@ -114,6 +122,17 @@ img#homelogo {
 	opacity: .85;
 }
 
+#spindiv:hover {
+	background: black;
+	opacity: 0.75;
+}
+
+#spindiv:active {
+	border: 1px solid black;
+	background: black;
+	opacity: 0.75;
+}
+
 .bonus {
 	font-size: 2em;
 	margin-top: 25px;
@@ -124,17 +143,6 @@ img#homelogo {
 	font-size: 2em;
 	margin-top: 25px;
 	color: white;
-}
-
-#spindiv:hover {
-	background: black;
-	opacity: 0.75;
-}
-
-#spindiv:active {
-	border: 1px solid black;
-	background: black;
-	opacity: 0.75;
 }
 
 #gametext {
@@ -161,6 +169,21 @@ img#homelogo {
 	margin-bottom: 2px;
 }
 
+#thirtyone {
+	border-radius: 100%;
+	background: white !important;
+	color: black;
+	font-weight: 300;
+	margin-left: 3px;
+	border: 1px solid;
+	border-color: none;
+}
+
+#thirtyone:hover {
+	border: 1px solid black;
+	margin-left: 5px;
+}
+
 #start {
 	margin-top: 20px;
 }
@@ -181,21 +204,6 @@ img#homelogo {
 	border: 1px solid white;
 }
 
-#thirtyone {
-	border-radius: 100%;
-	background: white !important;
-	color: black;
-	font-weight: 300;
-	margin-left: 3px;
-	border: 1px solid;
-	border-color: none;
-}
-
-#thirtyone:hover {
-	border: 1px solid black;
-	margin-left: 5px;
-}
-
 #gamehome {
 	margin-top: 45px;
 }
@@ -204,8 +212,9 @@ img#homelogo {
 	margin-bottom: 3px;
 }
 
-
-/*Win screen*/
+/*==========
+Win Screen
+==========*/
 #winner {
 	border: 1px solid black;
 	padding: 25px 0px;
@@ -223,8 +232,9 @@ img#homelogo {
 	padding-bottom: 20px;
 }
 
-
-/*Info screen*/
+/*===========
+Info Screen
+===========*/
 #gameinfo {
 	margin-top: 100px;
 }
