@@ -15,7 +15,7 @@ button {
     color: white;
  	background: none;
     border: 2px solid white;
-    font-weight: bold;
+    font-weight: 400;
     letter-spacing: 2px;
     word-spacing: 2px;
     font-family: Oxygen;
@@ -47,7 +47,7 @@ h3 {
 }
 
 p {
-	font-family: Karla;
+	font-family: Oxygen;
 }
 
 /*Title container*/
@@ -62,6 +62,7 @@ p {
 img#homelogo {
 	height: 150px;
 	width: 100px;
+	cursor: pointer;
 }
 
 #homescreen {
@@ -102,14 +103,15 @@ img#homelogo {
 #spinner {
 	height: 125px;
 	width: 75px;
-	cursor: pointer;
-	opacity: 1 !important;
 }
 
 #spindiv {
 	color: white;
 	font-weight: bold;
 	border-radius: 100%;
+	cursor: pointer;
+	padding: 15px 0;
+	opacity: .85;
 }
 
 .bonus {
@@ -126,19 +128,20 @@ img#homelogo {
 
 #spindiv:hover {
 	background: black;
-	background-opacity: 0.5;
+	opacity: 0.75;
 }
 
 #spindiv:active {
-	border: 3px solid white;
+	border: 1px solid black;
 	background: black;
-	background-opacity: 0.5;
+	opacity: 0.75;
 }
 
 #gametext {
 	margin-top: 30px;
 	color: white;
-	font-weight: bold;
+	font-weight: 200;
+	font-family: Oxygen;
 }
 
 #game {

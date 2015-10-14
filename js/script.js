@@ -67,10 +67,10 @@ var playerOneTurn = function() {
 			// move.play();
 		};
 	i = i + spinResult;
-	setTimeout(checkBonusPenaltyOne, 500);
+	setTimeout(checkBonusPenaltyOne, 700);
 	i = i; 
 	$("#playerturn").html("");
-	setTimeout(autoClick, 1300);
+	setTimeout(autoClick, 1400);
 	};	
 
 	$("#playerturn").html("It's the Computer's turn!");	
@@ -103,7 +103,7 @@ var playerTwoTurn = function() {
 			// move.play();
 		};
 	j = j + spinResult;
-	setTimeout(checkBonusPenaltyTwo, 300);
+	setTimeout(checkBonusPenaltyTwo, 800);
 	j = j;
 	};
 	
@@ -124,11 +124,13 @@ $("#spindiv").on("click", function() {
 
 	// player location logic
 	if (clickCount % 2 === 0) {
+		$("#spinner").effect("shake");
 		playerName = "Computer";
 		spinAlert();
 		$("#spacestext").html(playerName + " moved " + spinResult + " spaces!");
 		playerTwoTurn();
 	} else {
+		$("#spinner").effect("shake");
 		playerName = "You";
 		spinAlert();
 		$("#spacestext").html(playerName + " moved " + spinResult + " spaces!");
@@ -678,6 +680,11 @@ $("#gamehome").on("click", function(){
 	$("#game").fadeOut(500);
 	$("#homescreen").delay(550).fadeIn(500);
 });	
+
+// hide alerts
+$("#okaybutton").on("click", function() {
+	$("#alertdiv").hide();
+});
 
 // mini animation
 $("#shake").on("click", function() {
