@@ -1,22 +1,23 @@
 /*=========================
 overall styling across game
 =========================*/
+
 body {
-	background: url("../images/seattlebackground.jpg") no-repeat center center fixed;
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
- 	background-size: cover;
+    background: url("../images/seattlebackground.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 button {
-	background-color: none;
-	border: 2px solid black;
+    background-color: none;
+    border: 2px solid black;
 }
 
 .btn-default {
     color: white;
- 	background: none;
+    background: none;
     border: 2px solid white;
     font-weight: 400;
     letter-spacing: 2px;
@@ -29,229 +30,241 @@ button {
 }
 
 .btn-default:hover {
-	background: none;
-	border: 3px solid white;
-	font-weight: bolder;
-	color: white;
+    background: none;
+    border: 3px solid white;
+    font-weight: bolder;
+    color: white;
 }
 
 .btn-default:active {
-	background: white;
-	border: 3px solid black;
-	font-weight: bold;
-	color: black;
-	outline: 0;
+    background: white;
+    border: 3px solid black;
+    font-weight: bold;
+    color: black;
+    outline: 0;
 }
 
 h3 {
-	letter-spacing: 5px;
-	word-spacing: 3px;
-	font-family: Oxygen;
+    letter-spacing: 5px;
+    word-spacing: 3px;
+    font-family: Oxygen;
 }
 
 p {
-	font-family: Oxygen;
+    font-family: Oxygen;
 }
+
 
 /*===============
 Title Container
 ===============*/
+
 #title {
-	color: white;
-	letter-spacing: 10px;
-	word-spacing: 5px;
-	font-family: Oxygen;
+    color: white;
+    letter-spacing: 10px;
+    word-spacing: 5px;
+    font-family: Oxygen;
 }
+
 
 /*=========
 Home Page
 =========*/
+
 img#homelogo {
-	height: 150px;
-	width: 100px;
-	cursor: pointer;
+    height: 150px;
+    width: 100px;
+    cursor: pointer;
 }
 
 #homescreen {
-	margin-top: 100px;
+    margin-top: 100px;
 }
 
 #about {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 #gamebuttons {
-	margin-top: 20px;
+    margin-top: 20px;
 }
+
 
 /*============
 Rules Screen
 ============*/
+
 #rules {
-	margin-top: 50px;
-	border: 1px solid black;
-	padding: 25px;
-	background: black;
-	opacity: 0.75;
-	color: white;
-	border-radius: 10%;
+    margin-top: 50px;
+    border: 1px solid black;
+    padding: 25px;
+    background: black;
+    opacity: 0.75;
+    color: white;
+    border-radius: 10%;
 }
 
 #rulestext {
-	padding-bottom: 25px;
+    padding-bottom: 25px;
 }
 
 #rulestitle {
-	margin-top: 0;
+    margin-top: 0;
 }
+
 
 /*==========
 Game Screen
 ==========*/
+
 #spinner {
-	height: 125px;
-	width: 75px;
+    height: 125px;
+    width: 75px;
 }
 
 #spindiv {
-	color: white;
-	font-weight: bold;
-	border-radius: 100%;
-	cursor: pointer;
-	padding: 15px 0;
-	opacity: .85;
+    color: white;
+    font-weight: bold;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 15px 0;
+    opacity: .85;
 }
 
 #spindiv:hover {
-	background: black;
-	opacity: 0.75;
+    background: black;
+    opacity: 0.75;
 }
 
 #spindiv:active {
-	border: 1px solid black;
-	background: black;
-	opacity: 0.75;
+    border: 1px solid black;
+    background: black;
+    opacity: 0.75;
 }
 
 .bonus {
-	font-size: 2em;
-	margin-top: 25px;
-	color: white;
+    font-size: 2em;
+    margin-top: 25px;
+    color: white;
 }
 
 .penalty {
-	font-size: 2em;
-	margin-top: 25px;
-	color: white;
+    font-size: 2em;
+    margin-top: 25px;
+    color: white;
 }
 
 #gametext {
-	margin-top: 30px;
-	color: white;
-	font-weight: 200;
-	font-family: Oxygen;
+    margin-top: 30px;
+    color: white;
+    font-weight: 200;
+    font-family: Oxygen;
 }
 
 #game {
-	margin-top: 25px;
-	margin-bottom: 100px;
+    margin-top: 25px;
+    margin-bottom: 100px;
 }
 
 #zero {
-	border-radius: 100%;
-	color: black;
-	font-weight: 300;
-	background: white !important;
-	border: none;
+    border-radius: 100%;
+    color: black;
+    font-weight: 300;
+    background: white !important;
+    border: none;
 }
 
 #zero:hover {
-	margin-bottom: 2px;
+    margin-bottom: 2px;
 }
 
 #thirtyone {
-	border-radius: 100%;
-	background: white !important;
-	color: black;
-	font-weight: 300;
-	margin-left: 3px;
-	border: 1px solid;
-	border-color: none;
+    border-radius: 100%;
+    background: white !important;
+    color: black;
+    font-weight: 300;
+    margin-left: 3px;
+    border: 1px solid;
+    border-color: none;
 }
 
 #thirtyone:hover {
-	border: 1px solid black;
-	margin-left: 5px;
+    border: 1px solid black;
+    margin-left: 5px;
 }
 
 #start {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 #end {
-	margin-top: 28px;
+    margin-top: 28px;
 }
 
 .square {
-	border: 1px solid;
-	height: 95px;
-	background: black;
-	opacity: 0.75;
-	border-radius: 10%;
+    border: 1px solid;
+    height: 95px;
+    background: black;
+    opacity: 0.75;
+    border-radius: 10%;
 }
 
 .square:hover {
-	border: 1px solid white;
+    border: 1px solid white;
 }
 
 #gamehome {
-	margin-top: 45px;
+    margin-top: 45px;
 }
 
 #rowtwo {
-	margin-bottom: 3px;
+    margin-bottom: 3px;
 }
+
 
 /*==========
 Win Screen
 ==========*/
+
 #winner {
-	border: 1px solid black;
-	padding: 25px 0px;
-	background: black;
-	opacity: 0.75;
-	color: white;
-	border-radius: 10%;
+    border: 1px solid black;
+    padding: 25px 0px;
+    background: black;
+    opacity: 0.75;
+    color: white;
+    border-radius: 10%;
 }
 
 #wininfo {
-	margin-top: 100px;
+    margin-top: 100px;
 }
 
 #wintext {
-	padding-bottom: 20px;
+    padding-bottom: 20px;
 }
+
 
 /*===========
 Info Screen
 ===========*/
+
 #gameinfo {
-	margin-top: 100px;
+    margin-top: 100px;
 }
 
 #infotext {
-	border: 1px solid black;
-	padding: 25px;
-	background: black;
-	opacity: 0.75;
-	color: white;
-	border-radius: 10%;
+    border: 1px solid black;
+    padding: 25px;
+    background: black;
+    opacity: 0.75;
+    color: white;
+    border-radius: 10%;
 }
 
 #infohead {
-	padding-bottom: 15px;
+    padding-bottom: 15px;
 }
 
 #infohome {
-	margin-top: 10px;
+    margin-top: 10px;
 }
