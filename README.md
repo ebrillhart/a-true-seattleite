@@ -19,6 +19,10 @@ All audio from http://www.freesound.org
 
 Background image from: http://desktop.freewallpaper4.me/view/original/7083/aerial--photo-of-seattle.jpg
 
+Concept for the game was inspired by my classmates' stories of moving to Seattle and the stereotypes about the city that they found to be true. 
+
+Future plans for the game include adding a two-player option in addition to vs. the computer, making the gameboard longer and more complex, making mobile play more functional, and refactoring some code where possible. 
+
 
 
 
